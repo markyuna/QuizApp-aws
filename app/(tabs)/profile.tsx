@@ -5,12 +5,12 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 
-export default function SettingsScreen() {
+export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>OPTIONS DE JEU</Text>
+      <Text style={styles.title}>Perfile Screen</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/settings.tsx" />
+      <EditScreenInfo path="app/(tabs)/profile.tsx" />
     </View>
   );
 }
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    backgroundColor: '#093E73',
   },
   separator: {
     marginVertical: 30,

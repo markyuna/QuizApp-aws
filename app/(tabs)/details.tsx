@@ -1,16 +1,23 @@
 import * as React from 'react';
 
 import { StyleSheet } from 'react-native';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 
-export default function SettingsScreen() {
+export default function DetailsScreen() {
+  // const router = useRouter();
+  // const params = useLocalSearchParams();
+  
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>OPTIONS DE JEU</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/settings.tsx" />
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={styles.title}>Details</Text>
+      <Text>
+        Update the title
+      </Text>
+    </View>
     </View>
   );
 }
