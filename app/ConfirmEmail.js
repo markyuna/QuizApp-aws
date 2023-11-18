@@ -1,14 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView, Alert} from 'react-native';
-import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
-import SocialSignInButtons from '../../components/SocialSignInButtons';
+import CustomInput from '../components/CustomInput';
+import CustomButton from '../components/CustomButton';
+import SocialSignInButtons from '../components/SocialSignInButtons';
 import {useNavigation} from '@react-navigation/core';
 import {useForm} from 'react-hook-form';
 import {useRoute} from '@react-navigation/native';
 import {Auth} from 'aws-amplify';
 
-const ConfirmEmailScreen = () => {
+export default function ConfirmEmail() {
   const route = useRoute();
   const {control, handleSubmit, watch} = useForm({
     defaultValues: {username: route?.params?.username},
@@ -101,4 +101,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ConfirmEmailScreen;

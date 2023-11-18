@@ -14,9 +14,7 @@ export default function DetailsScreen() {
     <View style={styles.container}>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={styles.title}>Details</Text>
-      <Text>
-        Update the title
-      </Text>
+      <EditScreenInfo path="app/(tabs)/details.tsx" />
     </View>
     </View>
   );

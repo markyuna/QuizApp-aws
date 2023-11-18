@@ -9,17 +9,17 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-import Logo from '../../assets/images/Logo_1.png';
-import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
-import SocialSignInButtons from '../../components/SocialSignInButtons';
+import Logo from '../assets/images/Logo_1.png';
+import CustomInput from '../components/CustomInput';
+import CustomButton from '../components/CustomButton';
+import SocialSignInButtons from '../components/SocialSignInButtons';
 import {useNavigation} from '@react-navigation/native';
 import {useForm, Controller} from 'react-hook-form';
-import {Auth} from 'aws-amplify';
 
+import {Auth} from 'aws-amplify';
 // import { Link } from "expo-router";
 
-export default function SignInScreen() {
+export default function SignIn() {
   const {height} = useWindowDimensions();
   const navigation = useNavigation();
   const [loading, setLoading] = useState(false);
@@ -49,9 +49,9 @@ export default function SignInScreen() {
     navigation.navigate('forgot-password');
   };
 
-  // const onSignUpPress = () => {
-  //   navigation.navigate('sign-in');
-  // };
+  const onSignUpPress = () => {
+    navigation.navigate('SignUp');
+  };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -84,7 +84,7 @@ export default function SignInScreen() {
         />
 
         <CustomButton
-          text={loading ? 'Loading...' : 'sign-in'}
+          text={loading ? 'Loading...' : 'signIn'}
           onPress={handleSubmit(onSignInPressed)}
         />
 
@@ -97,7 +97,7 @@ export default function SignInScreen() {
         <SocialSignInButtons />
         <CustomButton
           text="Don't have an account? Create one"
-          onPress={navigation.navigate('sign-up')}
+          onPress={onSignUpPress}
           type="TERTIARY"
         /> 
       </View>

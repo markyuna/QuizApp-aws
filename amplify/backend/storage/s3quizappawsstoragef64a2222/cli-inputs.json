@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3quizappawsstoragef64a2222",
+  "bucketName": "quizappaws-storage-f64a2222",
+  "policyUUID": "53eac54c",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-// import { Link, Stack, useNavigation } from 'expo-router';
+import { Link, Stack, useNavigation } from 'expo-router';
 import { StyleSheet, Image } from 'react-native';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
@@ -14,11 +14,11 @@ function LogoTitle() {
   );
 }
 export default function Home() {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
-  // React.useEffect(() => {
-  //   navigation.setOptions({ headerShown: false });
-  // }, [navigation]);
+  React.useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
 
   return (
     <View style={styles.container}>
