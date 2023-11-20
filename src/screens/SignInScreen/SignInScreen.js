@@ -54,12 +54,12 @@ export default function SignInScreen() {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
+      <Image
+        source={Logo}
+        style={[styles.logo, {height: height * 0.4}]}
+        resizeMode="contain"
+      />
       <View style={styles.root}>
-        <Image
-          source={Logo}
-          style={[styles.logo, {height: height * 0.3}]}
-          resizeMode="contain"
-        />
 
         <CustomInput
           name="username"
@@ -111,8 +111,8 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   logo: {
-    width: '70%',
-    maxWidth: 300,
+    width: '100%',
+    maxWidth: 400,
     maxHeight: 200,
   },
 });
