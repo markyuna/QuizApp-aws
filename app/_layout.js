@@ -36,13 +36,13 @@ export default function RootLayout() {
 
   useEffect(() => {
     const listener = data => {
-      if (data.payload.event === 'signIn' || data.payload.event === 'signOut') {
+      if (data.payload.event === 'SignIn' || data.payload.event === 'signOut') {
         checkUser();
       }
     };
 
     Hub.listen('auth', listener);
-    return () => Hub.remove('auth', listener);
+    return () => Hub.listen('auth', listener);
   }, []);
 
   if (user === undefined) {
