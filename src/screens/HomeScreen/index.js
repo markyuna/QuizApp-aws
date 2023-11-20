@@ -8,10 +8,6 @@ import {useNavigation} from '@react-navigation/native';
 const Home = (props) => {
   const navigation = useNavigation();
 
-  const signOut = () => {
-    Auth.signOut();
-  };
-
   return (
     <View style={{flex: 1}}>
       {/* <Pressable
@@ -33,18 +29,7 @@ const Home = (props) => {
         </Pressable> */}
       </ImageBackground>
       <Text style={{fontSize: 24, alignSelf: 'center'}}>Home, sweet home</Text>
-      <Text
-        onPress={signOut}
-        style={{
-          width: '100%',
-          textAlign: 'center',
-          color: 'red',
-          marginTop: 'auto',
-          marginVertical: 20,
-          fontSize: 20,
-        }}>
-        Sign out
-      </Text>
+  
     </View>
   );
 };

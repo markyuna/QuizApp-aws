@@ -3,9 +3,9 @@ import * as React from 'react';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
+import UserProfile from '../screens/UserProfile';
+import Boutique from '../screens/Boutique';
 import SettingScreen from '../screens/SettingScreen';
-import SignInScreen from '../screens/SignInScreen';
-
 
 
 const BottomTab = createBottomTabNavigator();
@@ -28,31 +28,31 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={HomeScreen}
         options={{
           title: 'Home',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="home" />,
         }}
       />
-{/*       <BottomTab.Screen
-        name="SearchInvoice"
-        component={SearchInvoice}
+      <BottomTab.Screen
+        name="UserProfile"
+        component={UserProfile}
         options={{
-          title: 'Search Invoice',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'Profile',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="user-secret" />,
         }}
-      /> */}
-      {/* <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+      />
+      <BottomTab.Screen
+        name="Boutique"
+        component={Boutique}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          title: 'Boutique',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="shopping-cart" />,
         }}
-      /> */}
+      />
       <BottomTab.Screen
         name="Settings"
         component={SettingScreen}
         options={{
           title: 'Setting',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="whmcs" />,
         }}
       />
     </BottomTab.Navigator>

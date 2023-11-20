@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {TouchableOpacity, StyleSheet, View, Text} from 'react-native';
 import CustomButton from '../CustomButton';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 
 const SocialSignInButtons = () => {
   const onSignInFacebook = () => {
@@ -26,12 +26,21 @@ const SocialSignInButtons = () => {
         style={() => (<AntDesign name="facebook-square" size={24} color="black" />)}
       /> */}
 
-      <CustomButton
+      {/* <CustomButton
         text="Sign In with Google"
         onPress={onSignInGoogle}
-        bgColor="#FAE9EA"
-        fgColor="#DD4D44"
-      />
+        bgColor="#4765A9"
+        fgColor="#e3e3e3"
+        renderIcon={() => (<Ionicons name="logo-google" size={24} color="white" style={{marginRight:10}}/>)}
+      /> */}
+
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={onSignInGoogle}
+      >
+        <Ionicons name="logo-google" size={24} color="white" style={{marginRight:10}} />
+        <Text style={{color: 'white', fontWeight: '800'}}>Sign In with Google</Text>
+      </TouchableOpacity>
 
       {/* <CustomButton
         text="Sign In with Apple"
@@ -42,5 +51,18 @@ const SocialSignInButtons = () => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  button:{
+    backgroundColor: "#4765A9",
+    padding:10,
+    margin:30,
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:10
+  }
+});
 
 export default SocialSignInButtons;
