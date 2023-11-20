@@ -1,6 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+  },
   image: {
     width: '100%',
     height: 300,
@@ -15,7 +20,7 @@ const styles = StyleSheet.create({
     marginLeft: 25,
   },
   button: {
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     width: 200,
     height: 40,
     borderRadius: 10,
@@ -29,18 +34,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  searchButton: {
-    backgroundColor: '#fff',
-    height: 60,
-    width: Dimensions.get('screen').width - 20,
-    borderRadius: 30,
-    marginHorizontal: 10,
-    flexDirection: 'row',
+  startButton: {
+    padding: 60,
+    // height: 600,
+    // width: Dimensions.get('screen').width - 20,
+    borderRadius: 40,
+    // marginHorizontal: 35,
+    // flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    top: 50,
-    zIndex: 100,
+    // position: 'absolute',
+    top: -80,
+    // zIndex: 10,
   },
   searchButtonText: {
     fontSize: 16,

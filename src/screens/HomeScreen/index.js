@@ -1,21 +1,17 @@
 import React from 'react';
-import {View, ImageBackground, Text, Pressable } from 'react-native';
+import {SafeAreaView, Button, View, ImageBackground, Text, Pressable } from 'react-native';
 import styles from './styles';
 import {Auth} from 'aws-amplify';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
+import CustomButton from '../../components/CustomButton';
 
 const Home = (props) => {
   const navigation = useNavigation();
 
   return (
     <View style={{flex: 1}}>
-      {/* <Pressable
-        style={styles.searchButton}
-        onPress={() => navigation.navigate('Destination Search')}>
-        <FontAwesome5 name="search" size={25} color={'#f15454'} />
-        <Text style={styles.searchButtonText}>Where are you going?</Text>
-      </Pressable> */}
+      
 
       <ImageBackground
         source={require('../../../assets/images/wallpaper.jpg')}
@@ -28,8 +24,40 @@ const Home = (props) => {
           <Text style={styles.buttonText}>Explore nearby stays</Text>
         </Pressable> */}
       </ImageBackground>
-      <Text style={{fontSize: 24, alignSelf: 'center'}}>Home, sweet home</Text>
-  
+
+      {/* <View style={styles.startButton}>
+        <TouchableOpacity 
+          style={styles.button} 
+          render
+          onPress={() => navigation.navigate('Home')}
+        >
+        <CustomButton 
+          text="START" 
+          style={styles.startButton}
+          onPress={() => navigation.navigate('Home')}
+          />
+        </TouchableOpacity>
+          <Text style={styles.startButton}>MULTIPLAYER</Text>
+      </View> */}
+
+      <SafeAreaView style={styles.container}>
+        <Button
+          title="START"
+          onPress={() => navigation.navigate('Home')}
+        />
+        <View style={styles.separator}/>
+        <Button
+          title="Default button (disabled)"
+          disabled={true}
+          onPress={() => navigation.navigate('Home')}
+        />
+        <View style={styles.separator}/>
+        <Button
+          title="Red button"
+          color="red"
+          onPress={() => navigation.navigate('Home')}
+        />
+      </SafeAreaView>
     </View>
   );
 };

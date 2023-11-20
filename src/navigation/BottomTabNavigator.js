@@ -4,6 +4,7 @@ import * as React from 'react';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import UserProfile from '../screens/UserProfile';
+import Collection from '../screens/Collection';
 import Boutique from '../screens/Boutique';
 import SettingScreen from '../screens/SettingScreen';
 
@@ -37,6 +38,14 @@ export default function BottomTabNavigator({ navigation, route }) {
         options={{
           title: 'Profile',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="user-secret" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Collection"
+        component={Collection}
+        options={{
+          title: 'Collection',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="layer-group" />,
         }}
       />
       <BottomTab.Screen
