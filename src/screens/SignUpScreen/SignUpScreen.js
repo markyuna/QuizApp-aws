@@ -16,12 +16,12 @@ export default function SignUpScreen() {
   const navigation = useNavigation();
 
   const onRegisterPressed = async data => {
-    const {username, password, email, name} = data;
+    const {username, password, email, name, nickname} = data;
     try {
       await Auth.signUp({
         username,
         password,
-        attributes: {email, name, preferred_username: username},
+        attributes: {email, name, nickname, preferred_username: username},
       });
 
       navigation.navigate('ConfirmEmail', {username});
@@ -64,24 +64,24 @@ export default function SignUpScreen() {
           }}
         />
 
-        <CustomInput
+        {/* <CustomInput
           name="username"
           control={control}
-          placeholder="Username"
+          placeholder="Email"
           rules={{
             required: 'Username is required',
             minLength: {
-              value: 3,
-              message: 'Username should be at least 3 characters long',
+              value: 6,
+              message: 'Username should be at least 6 characters long',
             },
             maxLength: {
               value: 24,
               message: 'Username should be max 24 characters long',
             },
           }}
-        />
+        /> */}
         <CustomInput
-          name="email"
+          name="username"
           control={control}
           placeholder="Email"
           rules={{

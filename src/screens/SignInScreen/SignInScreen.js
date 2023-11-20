@@ -63,7 +63,7 @@ export default function SignInScreen() {
 
         <CustomInput
           name="username"
-          placeholder="Username"
+          placeholder="Email"
           control={control}
           rules={{required: 'Username is required'}}
         />
