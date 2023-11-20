@@ -5,7 +5,7 @@ import {Auth} from 'aws-amplify';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 
-const index = (props) => {
+const Home = (props) => {
   const navigation = useNavigation();
 
   const signOut = () => {
@@ -14,23 +14,23 @@ const index = (props) => {
 
   return (
     <View style={{flex: 1}}>
-      <Pressable
+      {/* <Pressable
         style={styles.searchButton}
         onPress={() => navigation.navigate('Destination Search')}>
         <FontAwesome5 name="search" size={25} color={'#f15454'} />
         <Text style={styles.searchButtonText}>Where are you going?</Text>
-      </Pressable>
+      </Pressable> */}
 
       <ImageBackground
         source={require('../../../assets/images/wallpaper.jpg')}
         style={styles.image}>
-        <Text style={styles.title}>Go Near</Text>
+        {/* <Text style={styles.title}>Go Near</Text> */}
 
-        <Pressable
+        {/* <Pressable
           style={styles.button}
           onPress={() => console.warn('Explore Btn clicked')}>
           <Text style={styles.buttonText}>Explore nearby stays</Text>
-        </Pressable>
+        </Pressable> */}
       </ImageBackground>
       <Text style={{fontSize: 24, alignSelf: 'center'}}>Home, sweet home</Text>
       <Text
@@ -49,4 +49,4 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default Home;

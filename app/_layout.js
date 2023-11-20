@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { SplashScreen, Stack } from 'expo-router';
 import { ActivityIndicator } from 'react-native';
-import { Authenticator } from '@aws-amplify/ui-react-native';
-import { Auth, Hub } from 'aws-amplify/utils';
+// import { Authenticator } from '@aws-amplify/ui-react-native';
+// import { Auth, Hub } from 'aws-amplify/utils';
 import { Text, View } from '../components/Themed';
 
 import Home from './(tabs)/home';
@@ -15,7 +15,7 @@ import ConfirmEmail from './ConfirmEmail';
 import ForgotPassword from './ForgotPassword';
 import NewPassword from './NewPassword';
 
-
+import TabLayout from './(tabs)/_layout';
 // const Stack = createNativeStackNavigator();
 
 export default function RootLayout() {
@@ -58,7 +58,10 @@ export default function RootLayout() {
     <Authenticator.Provider>
       <Stack.Screen screenOptions={{headerShown: false}}>
         {user ? (
-          <Stack.Screen name="Home" component={Home} />
+          <>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="./(tabs)/_layout"  />
+          </>
         ) : (
           <>
             <Stack.Screen name="SignIn" component={SignIn} />

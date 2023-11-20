@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { Authenticator, withAuthenticator, useAuthenticator } from '@aws-amplify/ui-react';
+// import { Authenticator, withAuthenticator, useAuthenticator } from '@aws-amplify/ui-react';
 // import { SignOutButton } from '../components/SignOutButton';
 
 // import RootLayout from './_layout';
