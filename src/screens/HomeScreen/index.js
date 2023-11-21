@@ -1,56 +1,37 @@
-import React from 'react';
-import {SafeAreaView, Button, View, ImageBackground, Text, Pressable } from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView, Button, View, ImageBackground, Text, Pressable, Modal } from 'react-native';
 import styles from './styles';
 import {Auth} from 'aws-amplify';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 import CustomButton from '../../components/CustomButton';
+import ModalStart from './ModalStart/ModalStart';
 
 const Home = (props) => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   const navigation = useNavigation();
 
   return (
     <View style={{flex: 1}}>
-      
-
       <ImageBackground
         source={require('../../../assets/images/wallpaper.jpg')}
         style={styles.image}>
-        {/* <Text style={styles.title}>Go Near</Text> */}
-
-        {/* <Pressable
-          style={styles.button}
-          onPress={() => console.warn('Explore Btn clicked')}>
-          <Text style={styles.buttonText}>Explore nearby stays</Text>
-        </Pressable> */}
       </ImageBackground>
-
-      {/* <View style={styles.startButton}>
-        <TouchableOpacity 
-          style={styles.button} 
-          render
-          onPress={() => navigation.navigate('Home')}
-        >
-        <CustomButton 
-          text="START" 
-          style={styles.startButton}
-          onPress={() => navigation.navigate('Home')}
-          />
-        </TouchableOpacity>
-          <Text style={styles.startButton}>MULTIPLAYER</Text>
-      </View> */}
 
       <SafeAreaView style={styles.container}>
         <CustomButton 
           text="START" 
-          style={styles.startButton}
-          onPress={() => navigation.navigate('Home')}
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => setModalVisible(true)}
         />
         <CustomButton 
           text="MULTIPLAYER"
           style={styles.button}
           onPress={() => navigation.navigate('Home')}
         />
+
+      <ModalStart modalVisible={modalVisible} setModalVisible={setModalVisible} />
       </SafeAreaView>
     </View>
   );

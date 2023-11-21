@@ -47,9 +47,50 @@ const styles = StyleSheet.create({
     top: -80,
     // zIndex: 10,
   },
-  searchButtonText: {
-    fontSize: 16,
+
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 1,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 3,
+  },
+  buttonOpen: {
+    backgroundColor: '#FFA726',
+  },
+  buttonClose: {
+    // backgroundColor: '#4765A9',
+  },
+  textStyle: {
+    flexDirection: 'row',
+    padding: 5,
+    color: 'white',
     fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#4765A9',
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
   },
 });
 
