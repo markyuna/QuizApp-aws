@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     marginLeft: 25,
   },
   button: {
-    // backgroundColor: '#fff',
+    backgroundColor: '#4765A9',
     width: 200,
     height: 40,
     borderRadius: 10,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
 
   startButton: {
-    padding: 60,
+    // padding: 60,
     // height: 600,
     // width: Dimensions.get('screen').width - 20,
     borderRadius: 40,

@@ -23,7 +23,11 @@ export default function BottomTabNavigator({ navigation, route }) {
 
   return (
     // <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
-    <BottomTab.Navigator >
+    <BottomTab.Navigator 
+    screenOptions={{
+      tabBarShowLabel: false
+    }}
+    >
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}

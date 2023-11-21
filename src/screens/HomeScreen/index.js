@@ -41,20 +41,14 @@ const Home = (props) => {
       </View> */}
 
       <SafeAreaView style={styles.container}>
-        <Button
-          title="START"
+        <CustomButton 
+          text="START" 
+          style={styles.startButton}
           onPress={() => navigation.navigate('Home')}
         />
-        <View style={styles.separator}/>
-        <Button
-          title="Default button (disabled)"
-          disabled={true}
-          onPress={() => navigation.navigate('Home')}
-        />
-        <View style={styles.separator}/>
-        <Button
-          title="Red button"
-          color="red"
+        <CustomButton 
+          text="MULTIPLAYER"
+          style={styles.button}
           onPress={() => navigation.navigate('Home')}
         />
       </SafeAreaView>
