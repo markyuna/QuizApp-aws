@@ -2,8 +2,41 @@ import React from 'react'
 import {Alert, Modal, StyleSheet, Text, Pressable, View} from 'react-native';
 import { AntDesign, EvilIcons, Ionicons, Entypo } from '@expo/vector-icons';
 import styles from '../styles';
+import { useNavigation } from "@react-navigation/native";
+
+// import Config from 'react-native-dotenv';
+// import Config from 'react-native-config';
+
+// import OpenAI from 'openai';
+
+// const openai = new OpenAI({
+//   apiKey: Config.OPENAI_API_KEY,
+// });
+
+// const generateQuizQuestions = async () => {
+//   const prompt = "Générer un quiz de culture générale avec 2 questions.";
+//   const response = await openai.chat.create({
+//     model: "gpt-3.5-turbo",
+//     messages: [],
+//     temperature: 0.5,
+//     max_tokens: 1024,
+//   });
+
+//   return response.choices[0].message.content.trim().split('\n'); 
+// };
 
 const ModalStart = ({ modalVisible, setModalVisible }) => {
+  const startClassicGame = async () => {
+    const quizQuestions = navigation.navigate("Quiz")
+    // Fermer le modal après avoir obtenu les questions
+    setModalVisible(false);
+
+    // console.log(quizQuestions);
+  };
+  
+
+  const navigation = useNavigation();
+
     return (
       <View style={styles.centeredView}>
       <Modal
@@ -25,7 +58,7 @@ const ModalStart = ({ modalVisible, setModalVisible }) => {
 
             <Text style={styles.modalText}>MODE DE JEU</Text>
 
-            <Pressable style={styles.textStyle}>
+            <Pressable style={styles.textStyle} onPress={startClassicGame}>
               <EvilIcons name="play" size={35} color="white" />
               <Text style={{ color:'white', fontWeight:'bold'}}> CLASSIQUE</Text>
             </Pressable>

@@ -27,9 +27,12 @@
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "expo-web-browser": "~12.3.2",
+    "openai": "^4.19.1",
     "react": "18.2.0",
     "react-hook-form": "^7.47.0",
     "react-native": "0.72.6",
+    "react-native-config": "^1.5.1",
+    "react-native-dotenv": "^3.4.9",
     "react-native-web": "~0.19.6"
   },
   "devDependencies": {

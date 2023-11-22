@@ -15,6 +15,8 @@ import TabLayout from '../../app/(tabs)/_layout';
 import {Auth, Hub} from 'aws-amplify';
 
 import BottomTabNavigator from './BottomTabNavigator';
+import QuizScreen from '../screens/HomeScreen/QuizScreen';
+import ResultsScreen from '../screens/HomeScreen/ResultsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -60,7 +62,8 @@ const Navigation = () => {
           <>
           {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
           <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
-          
+          <Stack.Screen name="Quiz" component={QuizScreen} options={{headerShown:false}}/>
+          <Stack.Screen name="Results" component={ResultsScreen} options={{headerShown:false}}/>
           </>
         ) : (
           <>
