@@ -1,9 +1,9 @@
-import { StyleSheet, Text, SafeAreaView, View, Pressable } from "react-native";
+import { StyleSheet, Text, SafeAreaView, View, Pressable, ImageBackground } from "react-native";
 import React, { useState, useEffect } from "react";
-import questions from "../../data/questions";
+import questions from "../../../data/questions";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
-const QuizScreen = () => {
+const ContraMontreScreen = () => {
   const navigation = useNavigation();
   const data = questions;
   const totalQuestions = data.length;
@@ -88,7 +88,9 @@ const QuizScreen = () => {
   console.log(answerStatus)
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ margin: 30 }}>
+      <View>
+
       <View
         style={{
           flexDirection: "row",
@@ -96,14 +98,15 @@ const QuizScreen = () => {
           justifyContent: "space-between",
           padding: 10,
         }}
-      >
+        >
         <Text>Quiz Challenge</Text>
+
         <Pressable
-          style={{ padding: 10, backgroundColor: "magenta", borderRadius: 20 }}
+          style={{ padding: 10, backgroundColor: "#712ADE", borderRadius: 20 }}
         >
           <Text
             style={{ color: "white", textAlign: "center", fontWeight: "bold" }}
-          >
+            >
             {counter}
           </Text>
         </Pressable>
@@ -139,7 +142,7 @@ const QuizScreen = () => {
         >
           <Text
             style={{
-              backgroundColor: "#FFC0CB",
+              backgroundColor: "#FFA726",
               borderRadius: 12,
               position: "absolute",
               left: 0,
@@ -148,7 +151,7 @@ const QuizScreen = () => {
               width: `${progressPercentage}%`,
               marginTop: 20,
             }}
-          />
+            />
         </View>
 
       <View
@@ -156,27 +159,27 @@ const QuizScreen = () => {
           marginTop: 30,
           backgroundColor: "#F0F8FF",
           padding: 10,
-          borderRadius: 6,
+          borderRadius: 12,
         }}
       >
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 30, fontWeight: "bold" }}>
           {currentQuestion?.question}
         </Text>
-        <View style={{ marginTop: 12 }}>
+        <View style={{ marginTop: 30 }}>
           {currentQuestion?.options.map((item, index) => (
             <Pressable
-              key={index}
-              onPress={() =>
+            key={index}
+            onPress={() =>
                 selectedAnswerIndex === null && setSelectedAnswerIndex(index)
               }
               style={
                 selectedAnswerIndex === index &&
-              index === currentQuestion.correctAnswerIndex
-                  ? {
-                      flexDirection: "row",
-                      alignItems: "center",
-                      borderWidth: 0.5,
-                      borderColor: "#00FFFF",
+                index === currentQuestion.correctAnswerIndex
+                ? {
+                  flexDirection: "row",
+                  alignItems: "center",
+                  borderWidth: 1,
+                      borderColor: "#FFA726",
                       marginVertical: 10,
                       backgroundColor: "green",
                       borderRadius: 20,
@@ -185,8 +188,8 @@ const QuizScreen = () => {
                   ? {
                       flexDirection: "row",
                       alignItems: "center",
-                      borderWidth: 0.5,
-                      borderColor: "#00FFFF",
+                      borderWidth: 1,
+                      borderColor: "#712ADE",
                       marginVertical: 10,
                       backgroundColor: "red",
                       borderRadius: 20,
@@ -194,8 +197,8 @@ const QuizScreen = () => {
                   : {
                       flexDirection: "row",
                       alignItems: "center",
-                      borderWidth: 0.5,
-                      borderColor: "#00FFFF",
+                      borderWidth: 1,
+                      borderColor: "#712ADE",
                       marginVertical: 10,
                       borderRadius: 20,
                     }
@@ -205,9 +208,9 @@ const QuizScreen = () => {
             index === currentQuestion.correctAnswerIndex ? (
               <AntDesign
               style={{
-                borderColor: "#00FFFF",
+                borderColor: "#FFA726",
                 textAlign: "center",
-                borderWidth: 0.5,
+                borderWidth: 2,
                 width: 40,
                 height: 40,
                 borderRadius: 20,
@@ -219,9 +222,9 @@ const QuizScreen = () => {
             />
               ) : selectedAnswerIndex != null &&
                 selectedAnswerIndex === index ? (
-                <AntDesign
+                  <AntDesign
                   style={{
-                    borderColor: "#00FFFF",
+                    borderColor: "#712ADE",
                     textAlign: "center",
                     borderWidth: 0.5,
                     width: 40,
@@ -236,10 +239,10 @@ const QuizScreen = () => {
                 />
               ) : (
                 <Text
-                  style={{
-                    borderColor: "#00FFFF",
+                style={{
+                  borderColor: "#712ADE",
                     textAlign: "center",
-                    borderWidth: 0.5,
+                    borderWidth: 2,
                     width: 40,
                     height: 40,
                     borderRadius: 20,
@@ -261,13 +264,13 @@ const QuizScreen = () => {
           answerStatus === null
             ? null
             : {
-                marginTop: 45,
+              marginTop: 45,
                 backgroundColor: "#F0F8FF",
                 padding: 10,
                 borderRadius: 7,
                 height: 120,
               }
-        }
+            }
       >
         {answerStatus === null ? null : (
           <Text
@@ -276,8 +279,8 @@ const QuizScreen = () => {
                 ? null
                 : { fontSize: 17, textAlign: "center", fontWeight: "bold" }
             }
-          >
-            {!!answerStatus ? "Correct Answer" : "Wrong Answer"}
+            >
+            {answerStatus ? "Correct Answer" : "Wrong Answer"}
           </Text>
         )}
 
@@ -317,10 +320,31 @@ const QuizScreen = () => {
           </Pressable>
         )}
       </View>
+
+    
+      </View>
     </SafeAreaView>
   );
 };
 
-export default QuizScreen;
+export default ContraMontreScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  footer: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: "#712ADE",
+    alignItems: "flex-end",
+    paddingVertical: 10,
+  },
+  line: {
+    height: 2,
+    width: "100%",
+    backgroundColor: "white",
+  },
+  exitButton: {
+    padding: 10,
+  },
+});

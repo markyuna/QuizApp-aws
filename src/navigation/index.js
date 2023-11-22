@@ -15,8 +15,9 @@ import TabLayout from '../../app/(tabs)/_layout';
 import {Auth, Hub} from 'aws-amplify';
 
 import BottomTabNavigator from './BottomTabNavigator';
-import QuizScreen from '../screens/HomeScreen/QuizScreen';
-import ResultsScreen from '../screens/HomeScreen/ResultsScreen';
+import ContraMontreScreen from '../screens/HomeScreen/ContraMontre/QuizScreen';
+import ResultsScreen from '../screens/HomeScreen/ContraMontre/ResultsScreen';
+import ClassiqueScreen from '../screens/HomeScreen/Classique/ClassiqueScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,7 +45,7 @@ const Navigation = () => {
     };
 
     Hub.listen('auth', listener);
-    return () => Hub.remove('auth', listener);
+    return () => Hub.listen('auth', listener);
   }, []);
 
   if (user === undefined) {
@@ -62,10 +63,11 @@ const Navigation = () => {
           <>
           {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
           <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
-          <Stack.Screen name="Quiz" component={QuizScreen} options={{headerShown:false}}/>
+          <Stack.Screen name="ContraMontre" component={ContraMontreScreen} options={{headerShown:false}}/>
           <Stack.Screen name="Results" component={ResultsScreen} options={{headerShown:false}}/>
+          <Stack.Screen name="Classique" component={ClassiqueScreen} />
           </>
-        ) : (
+        ) : ( 
           <>
             <Stack.Screen name="SignIn" component={SignInScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} />

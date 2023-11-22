@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 22,
+    // marginTop: 12,
   },
   modalView: {
     // margin: 30,
@@ -104,6 +104,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
     color: '#4765A9',
+  },
+  textRules: {
+    marginTop: 50,
+    color: 'black',
+    fontSize: 15,
+    fontWeight: 'bold',
+    marginBottom: 10,
   },
 });
 

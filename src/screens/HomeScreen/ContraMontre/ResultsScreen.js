@@ -1,5 +1,5 @@
 import {
-  StyleSheet,
+  Share,
   Text,
   SafeAreaView,
   View,
@@ -9,11 +9,35 @@ import {
 import React from "react";
 import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
+import styles from '../styles';
+
+
 const ResultsScreen = () => {
   const route = useRoute();
   // console.log(route.params);
+
+  const handleSharePress = async () => {
+    try {
+      const result = await Share.share({
+        message: 'Check out your results',
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      console.error('Error sharing:', error.message);
+    }
+  };
+
+
   return (
-    <SafeAreaView style={{ margin: 10 }}>
+    <SafeAreaView style={{ margin: 30 }}>
       <View
         style={{
           flexDirection: "row",
@@ -21,7 +45,7 @@ const ResultsScreen = () => {
           justifyContent: "space-between",
         }}
       >
-        <Text>Your Results</Text>
+        <Text style={styles.textStyle}>Your Results</Text>
         <View
           style={{
             flexDirection: "row",
@@ -29,13 +53,15 @@ const ResultsScreen = () => {
             marginRight: 14,
           }}
         >
-          <Text>Share</Text>
+        <Pressable onPress={handleSharePress}>
+          {/* <Text>Share</Text> */}
           <AntDesign
             style={{ marginLeft: 4 }}
             name="sharealt"
-            size={18}
+            size={34}
             color="black"
-          />
+            />
+        </Pressable>
         </View>
       </View>
 
@@ -47,8 +73,8 @@ const ResultsScreen = () => {
           marginVertical: 10,
         }}
       >
-        <Text>Questions Answered</Text>
-        <Text>(5/5)</Text>
+        <Text style={styles.textStyle}>Questions Answered</Text>
+        <Text style={styles.textStyle}>(5/5)</Text>
       </View>
 
       <Pressable
@@ -104,5 +130,3 @@ const ResultsScreen = () => {
 };
 
 export default ResultsScreen;
-
-const styles = StyleSheet.create({});

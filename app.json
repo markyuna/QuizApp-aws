@@ -9,7 +9,7 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/loading2.gif",
-      "resizeMode": "cover",
+      "resizeMode": "contain",
       "backgroundColor": "#000"
     },
     "assetBundlePatterns": [
