@@ -1,6 +1,6 @@
 import React from 'react'
 import {Alert, Modal, StyleSheet, Text, Pressable, View} from 'react-native';
-import { AntDesign, EvilIcons, Ionicons } from '@expo/vector-icons';
+import { AntDesign, EvilIcons, Ionicons, Entypo } from '@expo/vector-icons';
 import styles from '../styles';
 
 const ModalStart = ({ modalVisible, setModalVisible }) => {
@@ -20,23 +20,24 @@ const ModalStart = ({ modalVisible, setModalVisible }) => {
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <AntDesign name="closecircleo" size={24} color="black" style={{}} />
+              <AntDesign name="closecircleo" size={24} color="white" />
             </Pressable>
 
             <Text style={styles.modalText}>MODE DE JEU</Text>
 
             <Pressable style={styles.textStyle}>
-              <EvilIcons name="play" size={24} color="black" />
-              <Text style={styles.textStyle}>CLASSIQUE</Text>
+              <EvilIcons name="play" size={35} color="white" />
+              <Text style={{ color:'white', fontWeight:'bold'}}> CLASSIQUE</Text>
             </Pressable>
 
             <Pressable style={styles.textStyle}>
-              <Ionicons name="timer-outline" size={24} color="black" />
-              <Text style={styles.textStyle}>CONTRE LA MONTRE</Text>
+              <Ionicons name="timer-outline" size={30} color="white" />
+              <Text style={{ color:'white', fontWeight:'bold'}}>  CONTRE LA MONTRE</Text>
             </Pressable>
 
             <Pressable style={styles.textStyle}>
-              <Text style={styles.textStyle}>CATEGORIES</Text>
+              <Entypo name="grid" size={34} color="white" />
+              <Text style={{ color:'white', fontWeight:'bold'}}> CATEGORIES</Text>
             </Pressable>
           </View>
         </View>
