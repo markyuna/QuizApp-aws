@@ -5,28 +5,16 @@ import { Auth } from 'aws-amplify';
 import CustomButton from '../../components/CustomButton';
 
 const SettingScreen = () => {
-
   const signOut = () => {
     Auth.signOut();
   };
 
   return (
-    <View style={{height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>      
-      <View style={styles.container}>
-        <Link href={'/newPost'}>New post</Link>
- 
-      </View>
+    <View style={styles.container}>
       <CustomButton
         text={'Sign out'}
         onPress={signOut}
-        style={{
-          width: '50%',
-          height: 40,
-          backgroundColor: '#cfcfcf',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginBottom: 500,
-        }}
+        style={styles.button}
       />
     </View>
   );
@@ -34,12 +22,12 @@ const SettingScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '50%',
-    height: 40,
-    backgroundColor: '#cfcfcf',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+  },
+  button: {
+    // Puedes agregar estilos adicionales para el botón aquí
   },
 });
 

@@ -69,7 +69,7 @@ const Navigation = () => {
             component={ContraMontreScreen} 
             options={{
               headerShown:true,
-              title: 'Montre',
+              title: 'CONTRE LA MONTRE',
             }}
           />
           <Stack.Screen name="Results" component={ResultsScreen} options={{headerShown:false}}/>
@@ -78,8 +78,8 @@ const Navigation = () => {
             name="Categories" 
             component={CategoriesScreen}  
             options={{
-              headerShown:true,
-              
+              // header: () => null,
+              headerShown: true,
             }}
           />
           </>
