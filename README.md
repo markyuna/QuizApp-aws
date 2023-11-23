@@ -34,11 +34,11 @@ Catégories spéciales débloquables avec des points d'utilisateur.
 ## Captures d'écran
 
 <p align="center">
-  <img src="assets/images/demo1.pnp" width="200" heigth="500" padding="20"/>
+  <img src="./assets/images/demo1.pnp" width="200" heigth="500" padding="20"/>
 
-  <img src="assets/images/demo2.pnp" width="200" heigth="400" padding="20"/>
+  <img src="./assets/images/demo2.pnp" width="200" heigth="400" padding="20"/>
 
-  <img src="assets/images/demo3.pnp" width="200" heigth="500" padding="20"/>
+  <img src="./assets/images/demo3.pnp" width="200" heigth="500" padding="20"/>
 
-  <img src="assets/images/demo4.pnp" width="200" heigth="500" padding="20"/>
+  <img src="./assets/images/demo4.pnp" width="200" heigth="500" padding="20"/>
 </p>
