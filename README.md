@@ -37,18 +37,9 @@ Catégories spéciales débloquables avec des points d'utilisateur.
 
 ## Captures d'écran
 
-<div align="center">
-![Demo 1](./assets/images/demo1.png)
-
-![Demo 2](./assets/images/demo2.pnp)
-
-![Demo 3](./assets/images/demo3.pnp)
-
-![Demo 4](./assets/images/demo4.pnp)
-</div>
-
+<!-- markdownlint-disable MD033 -->
 <p align="center">
-  <img src="./assets/images/demo1.png" width="200" heigth="500" padding="20"/>
+  <img src="./assets/images/demo1.png" width="200" height="500" padding="20"/>
 
   <img src="./assets/images/demo2.png" width="200" heigth="400" padding="20"/>
 
@@ -56,3 +47,4 @@ Catégories spéciales débloquables avec des points d'utilisateur.
 
   <img src="./assets/images/demo4.png" width="200" heigth="500" padding="20"/>
 </p>
+<!-- markdownlint-enable MD033 -->
