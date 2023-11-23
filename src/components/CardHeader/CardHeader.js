@@ -5,20 +5,18 @@ import { FontAwesome5 } from '@expo/vector-icons';
 const CardHeader = () => {
   return (
     <View style={styles.container} >
-        
-            <FontAwesome5 name="user-circle" size={50} color="#1F9515" style={{padding: 10}}/>
-            <View style={styles.user}>
-                <Text>Vous</Text>
-                <Text>0 pts</Text>
-                <Text>Niveau 1 ( 0% )</Text>
-            </View>
+      <FontAwesome5 name="user-circle" size={50} color="#1F9515" style={{padding: 10}}/>
+      <View style={styles.user}>
+        <Text>Vous</Text>
+        <Text>0 pts</Text>
+        <Text>Niveau 1 ( 0% )</Text>
+      </View>
        
       
       <View style={styles.bag}>
         <Image 
-            style={{width: 30, height: 50, padding: 10}}
-            source={require('../../../assets/images/moneybag.png')}
-            
+          style={{width: 30, height: 50, padding: 10}}
+          source={require('../../../assets/images/moneybag.png')}
         />
         <Text>30</Text>
       </View>

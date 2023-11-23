@@ -39,6 +39,13 @@ const ModalStart = ({ modalVisible, setModalVisible }) => {
 
     console.log(quizQuestions);
   };
+
+  const startCategories = async () => {
+    const quizQuestions = navigation.navigate("Categories")
+    setModalVisible(false);
+
+    console.log(quizQuestions);
+  };
   
 
   const navigation = useNavigation();
@@ -77,7 +84,7 @@ const ModalStart = ({ modalVisible, setModalVisible }) => {
               <Text style={{ color:'white', fontWeight:'bold'}}>  CONTRE LA MONTRE</Text>
             </Pressable>
 
-            <Pressable style={styles.textStyle}>
+            <Pressable style={styles.textStyle} onPress={startCategories} >
               <Entypo name="grid" size={34} color="white" />
               <Text style={{ color:'white', fontWeight:'bold'}}> CATEGORIES</Text>
             </Pressable>

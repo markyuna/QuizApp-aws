@@ -10,14 +10,15 @@ import SignUpScreen from '../screens/SignUpScreen';
 import ConfirmEmailScreen from '../screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import NewPasswordScreen from '../screens/NewPasswordScreen';
-import HomeScreen from '../screens/HomeScreen';
-import TabLayout from '../../app/(tabs)/_layout';
+// import HomeScreen from '../screens/HomeScreen';
+// import TabLayout from '../../app/(tabs)/_layout';
 import {Auth, Hub} from 'aws-amplify';
 
 import BottomTabNavigator from './BottomTabNavigator';
 import ContraMontreScreen from '../screens/HomeScreen/ContraMontre/QuizScreen';
 import ResultsScreen from '../screens/HomeScreen/ContraMontre/ResultsScreen';
 import ClassiqueScreen from '../screens/HomeScreen/Classique/ClassiqueScreen';
+import CategoriesScreen from '../screens/HomeScreen/Categories';
 
 const Stack = createNativeStackNavigator();
 
@@ -63,9 +64,24 @@ const Navigation = () => {
           <>
           {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
           <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
-          <Stack.Screen name="ContraMontre" component={ContraMontreScreen} options={{headerShown:false}}/>
+          <Stack.Screen 
+            name="ContraMontre" 
+            component={ContraMontreScreen} 
+            options={{
+              headerShown:true,
+              title: 'Montre',
+            }}
+          />
           <Stack.Screen name="Results" component={ResultsScreen} options={{headerShown:false}}/>
           <Stack.Screen name="Classique" component={ClassiqueScreen} />
+          <Stack.Screen 
+            name="Categories" 
+            component={CategoriesScreen}  
+            options={{
+              headerShown:true,
+              
+            }}
+          />
           </>
         ) : ( 
           <>
