@@ -14,31 +14,35 @@ Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé.
    git clone <lien-du-depot>
    cd quizapp-aws
 
-## Installez les dépendances:
+## Installez les dépendances
+
 npm install
 
-## Lancez l'application:
+## Lancez l'application
+
 npx expo start
 
 ## Technologies Utilisées
+
 React Native
 AWS Amplify
 AWS Cognito
 Expo
 
 ## Fonctionnalités
+
 Quiz dans différentes catégories.
 Authentification utilisateur avec AWS Cognito.
 Catégories spéciales débloquables avec des points d'utilisateur.
 
 ## Captures d'écran
 
-<p align="center">
-  <img src="./assets/images/demo1.pnp" width="200" heigth="500" padding="20"/>
+<div align="center">
+![Demo 1](./assets/images/demo1.PNG)
 
-  <img src="./assets/images/demo2.pnp" width="200" heigth="400" padding="20"/>
+![Demo 2](./assets/images/demo2.pnp)
 
-  <img src="./assets/images/demo3.pnp" width="200" heigth="500" padding="20"/>
+![Demo 3](./assets/images/demo3.pnp)
 
-  <img src="./assets/images/demo4.pnp" width="200" heigth="500" padding="20"/>
+![Demo 4](./assets/images/demo4.pnp)
 </p>
