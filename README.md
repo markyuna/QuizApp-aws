@@ -31,7 +31,14 @@ Quiz dans différentes catégories.
 Authentification utilisateur avec AWS Cognito.
 Catégories spéciales débloquables avec des points d'utilisateur.
 
-## Vidéo de Démo
-![Video de la aplicación]('https://res.cloudinary.com/dxrttyi2g/video/upload/v1700711987/Demo_ruftiy.mov')
+## Captures d'écran
 
-Regardez la démo ici
+<p align="center">
+  <img src="assets/images/demo1.pnp" width="200" heigth="500" padding="20"/>
+
+  <img src="assets/images/demo2.pnp" width="200" heigth="400" padding="20"/>
+
+  <img src="assets/images/demo3.pnp" width="200" heigth="500" padding="20"/>
+
+  <img src="assets/images/demo4.pnp" width="200" heigth="500" padding="20"/>
+</p>
