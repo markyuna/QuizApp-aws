@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
   },
   lockIcon: {
     position: 'absolute',
-    top: 15,
-    right: 15,
+    top: 20,
+    right: 20,
   },
   unlockableCategoryImage: {
     width: 70,
