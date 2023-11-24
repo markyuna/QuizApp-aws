@@ -43,7 +43,7 @@ Catégories spéciales débloquables avec des points d'utilisateur.
 
   <img src="./assets/images/demo2.png" width="200" heigth="400" padding="20"/>
 
-  <img src="./assets/images/demo3.png" width="200" heigth="500" padding="20"/>
+  <img src="https://res.cloudinary.com/dxrttyi2g/image/upload/v1700819263/demo1_hfdx2w.png" width="200" heigth="500" padding="20"/>
 
   <img src="./assets/images/demo4.png" width="200" heigth="500" padding="20"/>
 </p>
