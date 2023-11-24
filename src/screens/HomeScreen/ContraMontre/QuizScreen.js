@@ -89,7 +89,7 @@ const ContraMontreScreen = () => {
 
   return (
     <SafeAreaView style={{ margin: 30 }}>
-      <View>
+      {/* <View> */}
 
       <View
         style={{
@@ -133,11 +133,10 @@ const ContraMontreScreen = () => {
             width: "100%",
             flexDirection: "row",
             alignItems: "center",
-            height: 10,
+            height: 20,
             borderRadius: 20,
             justifyContent: "center",
-            marginTop: 20,
-            marginLeft: 10,
+            marginTop: 30,
           }}
         >
           <Text
@@ -156,7 +155,7 @@ const ContraMontreScreen = () => {
 
       <View
         style={{
-          marginTop: 30,
+          marginTop: 20,
           backgroundColor: "#F0F8FF",
           padding: 10,
           borderRadius: 12,
@@ -165,7 +164,7 @@ const ContraMontreScreen = () => {
         <Text style={{ fontSize: 30, fontWeight: "bold" }}>
           {currentQuestion?.question}
         </Text>
-        <View style={{ marginTop: 30 }}>
+        <View style={{ marginTop: 20 }}>
           {currentQuestion?.options.map((item, index) => (
             <Pressable
             key={index}
@@ -264,7 +263,7 @@ const ContraMontreScreen = () => {
           answerStatus === null
             ? null
             : {
-              marginTop: 45,
+              marginTop: 35,
                 backgroundColor: "#F0F8FF",
                 padding: 10,
                 borderRadius: 7,
@@ -322,7 +321,7 @@ const ContraMontreScreen = () => {
       </View>
 
     
-      </View>
+      {/* </View> */}
     </SafeAreaView>
   );
 };

@@ -1,3 +1,5 @@
+//src/components/CustomButton
+
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 

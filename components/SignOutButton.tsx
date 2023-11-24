@@ -1,8 +1,8 @@
 // SignOutButton.tsx:
 
-// import * as React from 'react';
+import * as React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
-// import { useAuthenticator} from '@aws-amplify/ui-react-native';
+import { useAuthenticator} from '@aws-amplify/ui-react-native';
 
 const userSelector = (context: { user: any; }) => [context.user];
 
@@ -11,7 +11,7 @@ export default function SignOutButton() {
     return (
       <Pressable onPress={signOut} style={styles.buttonContainer}>
         <Text style={styles.buttonText}>
-          Hello, {user.username}! Click to sign out!
+          {/* Hello, {user.username}! Click to sign out! */}
         </Text>
       </Pressable>
     );

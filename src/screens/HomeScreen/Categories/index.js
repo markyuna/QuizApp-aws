@@ -9,12 +9,12 @@ const CategoriesScreen = () => {
 
   // Categorías regulares en francés
   const regularCategories = [
-    'Géographie',
-    'Divertissement',
-    'Histoire',
-    'Art et Littérature',
-    'Science et Nature',
-    'Sports',
+    { name: 'Géographie', image: require('../../../../assets/images/geographie_icon.png')},
+    { name: 'Récréation', image: require('../../../../assets/images/divertisement_icon.png')},
+    { name: 'Histoire', image: require('../../../../assets/images/histoire_icon.png')},
+    { name: 'Science', image: require('../../../../assets/images/science_icon.png')},
+    { name: 'Sports', image: require('../../../../assets/images/sports_icon.png')},
+    { name: 'Art', image: require('../../../../assets/images/art_icon.png')},
   ];
 
   // Categorías especiales desbloqueables
@@ -42,7 +42,8 @@ const CategoriesScreen = () => {
             style={styles.categoryButton}
             onPress={() => navigation.navigate('Quiz', { category: category })}
           >
-            <Text style={styles.categoryText}>{category}</Text>
+            <Image source={category.image} style={styles.unlockableCategoryImage} />
+            <Text style={styles.categoryText}>{category.name}</Text>
           </Pressable>
         ))}
       </View>
@@ -124,14 +125,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   categoryButton: {
-    backgroundColor: '#712ADE',
-    padding: 15,
+    padding: 10,
+    flexDirection: 'column',
     borderRadius: 10,
-    marginBottom: 50,
-    width: '48%',
+    marginBottom: 20,
   },
   categoryText: {
-    color: 'white',
     textAlign: 'center',
     fontWeight: 'bold',
   },
@@ -154,12 +153,12 @@ const styles = StyleSheet.create({
     right: 15,
   },
   unlockableCategoryImage: {
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
     borderRadius: 20,
     borderWidth: 5,
     marginBottom: 10,
-    padding: 20,
+    padding: 10,
   },
   unlockableCategoryText: {
     fontWeight: 'bold',
