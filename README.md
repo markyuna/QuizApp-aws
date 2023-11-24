@@ -39,7 +39,7 @@ Catégories spéciales débloquables avec des points d'utilisateur.
 
 <!-- markdownlint-disable MD033 -->
 <p align="center">
-  <img src="https://res.cloudinary.com/dxrttyi2g/image/upload/v1700819263/demo1_hfdx2w.png" width="200" height="500" padding="20"/>
+  <img src="https://res.cloudinary.com/dxrttyi2g/image/upload/v1700819263/demo1_hfdx2w.png" width="200" height="400" padding="20"/>
 
   <img src="https://res.cloudinary.com/dxrttyi2g/image/upload/v1700819263/demo2_wxxqfv.png" width="200" heigth="400" padding="20"/>
 
