@@ -1,11 +1,13 @@
 import { StyleSheet, Text, SafeAreaView, View, Pressable, ImageBackground } from "react-native";
 import React, { useState, useEffect } from "react";
-import questions from "../../../data/questions";
+import {categories} from "../../../data/questions";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
-const ContraMontreScreen = () => {
+
+
+const ClassiqueScreen = () => {
   const navigation = useNavigation();
-  const data = questions;
+  const data = categories;
   const totalQuestions = data.length;
   // points
   const [points, setPoints] = useState(0);
@@ -23,7 +25,7 @@ const ContraMontreScreen = () => {
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
 
   // Counter
-  const [counter, setCounter] = useState(15);
+  // const [counter, setCounter] = useState(15);
 
   // interval
   let interval = null;
@@ -49,24 +51,24 @@ const ContraMontreScreen = () => {
     setAnswerStatus(null);
   }, [index]);
 
-  useEffect(() => {
-    const myInterval = () => {
-      if (counter >= 1) {
-        setCounter((state) => state - 1);
-      }
-      if (counter === 0) {
-        setIndex(index + 1);
-        setCounter(15);
-      }
-    };
+  // useEffect(() => {
+  //   const myInterval = () => {
+  //     if (counter >= 1) {
+  //       setCounter((state) => state - 1);
+  //     }
+  //     if (counter === 0) {
+  //       setIndex(index + 1);
+  //       setCounter(15);
+  //     }
+  //   };
 
-    interval = setTimeout(myInterval, 1000);
+  //   interval = setTimeout(myInterval, 1000);
 
-    // clean up
-    return () => {
-      clearTimeout(interval);
-    };
-  }, [counter]);
+  //   // clean up
+  //   return () => {
+  //     clearTimeout(interval);
+  //   };
+  // }, [counter]);
 
   useEffect(() => {
     if (index + 1 > data.length) {
@@ -78,19 +80,17 @@ const ContraMontreScreen = () => {
     }
   }, [index]);
 
-  useEffect(() => {
-    if (!interval) {
-      setCounter(15);
-    }
-  }, [index]);
+  // useEffect(() => {
+  //   if (!interval) {
+  //     setCounter(15);
+  //   }
+  // }, [index]);
 
   const currentQuestion = data[index];
   console.log(answerStatus)
 
   return (
     <SafeAreaView style={{ margin: 30 }}>
-      {/* <View> */}
-
       <View
         style={{
           flexDirection: "row",
@@ -101,15 +101,6 @@ const ContraMontreScreen = () => {
         >
         <Text>Quiz Challenge</Text>
 
-        <Pressable
-          style={{ padding: 10, backgroundColor: "#712ADE", borderRadius: 20 }}
-        >
-          <Text
-            style={{ color: "white", textAlign: "center", fontWeight: "bold" }}
-            >
-            {counter}
-          </Text>
-        </Pressable>
       </View>
 
       <View
@@ -122,7 +113,7 @@ const ContraMontreScreen = () => {
       >
         <Text>Your Progress</Text>
         <Text>
-          ({index}/{totalQuestions}) questions answered
+          ({index}/{totalQuestions}) Questions answered
         </Text>
       </View>
 
@@ -137,12 +128,13 @@ const ContraMontreScreen = () => {
             borderRadius: 20,
             justifyContent: "center",
             marginTop: 30,
+            // marginLeft: 10,
           }}
         >
           <Text
             style={{
               backgroundColor: "#FFA726",
-              borderRadius: 12,
+              // borderRadius: 35,
               position: "absolute",
               left: 0,
               height: 10,
@@ -150,12 +142,12 @@ const ContraMontreScreen = () => {
               width: `${progressPercentage}%`,
               marginTop: 20,
             }}
-            />
+          />
         </View>
 
       <View
         style={{
-          marginTop: 20,
+          marginTop: 30,
           backgroundColor: "#F0F8FF",
           padding: 10,
           borderRadius: 12,
@@ -164,20 +156,20 @@ const ContraMontreScreen = () => {
         <Text style={{ fontSize: 30, fontWeight: "bold" }}>
           {currentQuestion?.question}
         </Text>
-        <View style={{ marginTop: 20 }}>
+        <View style={{ marginTop: 30 }}>
           {currentQuestion?.options.map((item, index) => (
             <Pressable
-            key={index}
-            onPress={() =>
+              key={index}
+              onPress={() =>
                 selectedAnswerIndex === null && setSelectedAnswerIndex(index)
               }
               style={
                 selectedAnswerIndex === index &&
-                index === currentQuestion.correctAnswerIndex
-                ? {
-                  flexDirection: "row",
-                  alignItems: "center",
-                  borderWidth: 1,
+              index === currentQuestion.correctAnswerIndex
+                  ? {
+                      flexDirection: "row",
+                      alignItems: "center",
+                      borderWidth: 1,
                       borderColor: "#FFA726",
                       marginVertical: 10,
                       backgroundColor: "green",
@@ -221,7 +213,7 @@ const ContraMontreScreen = () => {
             />
               ) : selectedAnswerIndex != null &&
                 selectedAnswerIndex === index ? (
-                  <AntDesign
+                <AntDesign
                   style={{
                     borderColor: "#712ADE",
                     textAlign: "center",
@@ -238,8 +230,8 @@ const ContraMontreScreen = () => {
                 />
               ) : (
                 <Text
-                style={{
-                  borderColor: "#712ADE",
+                  style={{
+                    borderColor: "#712ADE",
                     textAlign: "center",
                     borderWidth: 2,
                     width: 40,
@@ -263,13 +255,13 @@ const ContraMontreScreen = () => {
           answerStatus === null
             ? null
             : {
-              marginTop: 35,
+                marginTop: 45,
                 backgroundColor: "#F0F8FF",
                 padding: 10,
                 borderRadius: 7,
                 height: 120,
               }
-            }
+        }
       >
         {answerStatus === null ? null : (
           <Text
@@ -278,7 +270,7 @@ const ContraMontreScreen = () => {
                 ? null
                 : { fontSize: 17, textAlign: "center", fontWeight: "bold" }
             }
-            >
+          >
             {answerStatus ? "Correct Answer" : "Wrong Answer"}
           </Text>
         )}
@@ -319,31 +311,12 @@ const ContraMontreScreen = () => {
           </Pressable>
         )}
       </View>
-
-    
-      {/* </View> */}
     </SafeAreaView>
   );
 };
 
-export default ContraMontreScreen;
+export default ClassiqueScreen;
 
 const styles = StyleSheet.create({
-  footer: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: "#712ADE",
-    alignItems: "flex-end",
-    paddingVertical: 10,
-  },
-  line: {
-    height: 2,
-    width: "100%",
-    backgroundColor: "white",
-  },
-  exitButton: {
-    padding: 10,
-  },
+
 });

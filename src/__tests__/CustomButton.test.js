@@ -5,6 +5,7 @@ import renderer from 'react-test-renderer';
 import CustomButton from '../components/CustomButton/CustomButton';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<CustomButton onPress={() => {}} text="Press me" />).toJSON();
+  const text = 'Press me';  // Define the text variable
+  const tree = renderer.create(<CustomButton onPress={() => {}} text={text} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

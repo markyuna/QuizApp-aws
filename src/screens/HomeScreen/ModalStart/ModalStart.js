@@ -33,7 +33,7 @@ const ModalStart = ({ modalVisible, setModalVisible }) => {
     console.log(quizQuestions);
   };
 
-  const startClassicGame = async () => {
+  const generalKnowledgeQuestions = async () => {
     const quizQuestions = navigation.navigate("Classique")
     setModalVisible(false);
 
@@ -73,7 +73,7 @@ const ModalStart = ({ modalVisible, setModalVisible }) => {
        
             <Pressable 
               style={styles.textStyle}
-              onPress={startClassicGame}
+              onPress={generalKnowledgeQuestions}
             >
               <EvilIcons name="play" size={35} color="white" />
               <Text style={{ color:'white', fontWeight:'bold'}}> CLASSIQUE</Text>
