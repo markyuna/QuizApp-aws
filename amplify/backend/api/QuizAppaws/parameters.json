@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "QuizAppaws",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-11-29T06:27:38.231Z"
 }
