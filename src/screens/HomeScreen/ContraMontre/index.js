@@ -1,13 +1,14 @@
-import { StyleSheet, Text, SafeAreaView, View, Pressable, ImageBackground } from "react-native";
+import { StyleSheet, Text, SafeAreaView, View, Pressable } from "react-native";
 import React, { useState, useEffect } from "react";
-import questions from "../../../data/questions";
+import { generalKnowledgeQuestions } from "../../../data/questions";
+
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 const ContraMontreScreen = () => {
   const navigation = useNavigation();
-  const data = questions;
-  const totalQuestions = data.length;
-  console.log(questions);
+  const data = generalKnowledgeQuestions;
+  const totalQuestions = generalKnowledgeQuestions.length;
+
   // points
   const [points, setPoints] = useState(0);
 
@@ -89,9 +90,7 @@ const ContraMontreScreen = () => {
   console.log(answerStatus)
 
   return (
-    <SafeAreaView style={{ margin: 30 }}>
-      {/* <View> */}
-
+    <SafeAreaView>
       <View
         style={{
           flexDirection: "row",
@@ -99,15 +98,14 @@ const ContraMontreScreen = () => {
           justifyContent: "space-between",
           padding: 10,
         }}
-        >
+      >
         <Text>Quiz Challenge</Text>
-
         <Pressable
-          style={{ padding: 10, backgroundColor: "#712ADE", borderRadius: 20 }}
+          style={{ padding: 10, backgroundColor: "magenta", borderRadius: 20 }}
         >
           <Text
             style={{ color: "white", textAlign: "center", fontWeight: "bold" }}
-            >
+          >
             {counter}
           </Text>
         </Pressable>
@@ -134,15 +132,16 @@ const ContraMontreScreen = () => {
             width: "100%",
             flexDirection: "row",
             alignItems: "center",
-            height: 20,
+            height: 10,
             borderRadius: 20,
             justifyContent: "center",
-            marginTop: 30,
+            marginTop: 20,
+            marginLeft: 10,
           }}
         >
           <Text
             style={{
-              backgroundColor: "#FFA726",
+              backgroundColor: "#FFC0CB",
               borderRadius: 12,
               position: "absolute",
               left: 0,
@@ -151,35 +150,34 @@ const ContraMontreScreen = () => {
               width: `${progressPercentage}%`,
               marginTop: 20,
             }}
-            />
+          />
         </View>
 
       <View
         style={{
-          marginTop: 20,
+          marginTop: 30,
           backgroundColor: "#F0F8FF",
           padding: 10,
-          borderRadius: 12,
+          borderRadius: 6,
         }}
       >
-        <Text style={{ fontSize: 30, fontWeight: "bold" }}>
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
           {currentQuestion?.question}
         </Text>
-        <View style={{ marginTop: 20 }}>
+        <View style={{ marginTop: 12 }}>
           {currentQuestion?.options.map((item, index) => (
             <Pressable
-            key={index}
-            onPress={() =>
+              onPress={() =>
                 selectedAnswerIndex === null && setSelectedAnswerIndex(index)
               }
               style={
                 selectedAnswerIndex === index &&
-                index === currentQuestion.correctAnswerIndex
-                ? {
-                  flexDirection: "row",
-                  alignItems: "center",
-                  borderWidth: 1,
-                      borderColor: "#FFA726",
+              index === currentQuestion.correctAnswerIndex
+                  ? {
+                      flexDirection: "row",
+                      alignItems: "center",
+                      borderWidth: 0.5,
+                      borderColor: "#00FFFF",
                       marginVertical: 10,
                       backgroundColor: "green",
                       borderRadius: 20,
@@ -188,8 +186,8 @@ const ContraMontreScreen = () => {
                   ? {
                       flexDirection: "row",
                       alignItems: "center",
-                      borderWidth: 1,
-                      borderColor: "#712ADE",
+                      borderWidth: 0.5,
+                      borderColor: "#00FFFF",
                       marginVertical: 10,
                       backgroundColor: "red",
                       borderRadius: 20,
@@ -197,8 +195,8 @@ const ContraMontreScreen = () => {
                   : {
                       flexDirection: "row",
                       alignItems: "center",
-                      borderWidth: 1,
-                      borderColor: "#712ADE",
+                      borderWidth: 0.5,
+                      borderColor: "#00FFFF",
                       marginVertical: 10,
                       borderRadius: 20,
                     }
@@ -208,9 +206,9 @@ const ContraMontreScreen = () => {
             index === currentQuestion.correctAnswerIndex ? (
               <AntDesign
               style={{
-                borderColor: "#FFA726",
+                borderColor: "#00FFFF",
                 textAlign: "center",
-                borderWidth: 2,
+                borderWidth: 0.5,
                 width: 40,
                 height: 40,
                 borderRadius: 20,
@@ -222,9 +220,9 @@ const ContraMontreScreen = () => {
             />
               ) : selectedAnswerIndex != null &&
                 selectedAnswerIndex === index ? (
-                  <AntDesign
+                <AntDesign
                   style={{
-                    borderColor: "#712ADE",
+                    borderColor: "#00FFFF",
                     textAlign: "center",
                     borderWidth: 0.5,
                     width: 40,
@@ -239,10 +237,10 @@ const ContraMontreScreen = () => {
                 />
               ) : (
                 <Text
-                style={{
-                  borderColor: "#712ADE",
+                  style={{
+                    borderColor: "#00FFFF",
                     textAlign: "center",
-                    borderWidth: 2,
+                    borderWidth: 0.5,
                     width: 40,
                     height: 40,
                     borderRadius: 20,
@@ -264,13 +262,13 @@ const ContraMontreScreen = () => {
           answerStatus === null
             ? null
             : {
-              marginTop: 35,
+                marginTop: 45,
                 backgroundColor: "#F0F8FF",
                 padding: 10,
                 borderRadius: 7,
                 height: 120,
               }
-            }
+        }
       >
         {answerStatus === null ? null : (
           <Text
@@ -279,12 +277,12 @@ const ContraMontreScreen = () => {
                 ? null
                 : { fontSize: 17, textAlign: "center", fontWeight: "bold" }
             }
-            >
-            {answerStatus ? "Correct Answer" : "Wrong Answer"}
+          >
+            {!answerStatus ? "Correct Answer" : "Wrong Answer"}
           </Text>
         )}
 
-        {index + 1 >= questions.length ? (
+        {index + 1 >= data.length ? (
           <Pressable
             onPress={() =>
               navigation.navigate("Results", {
@@ -320,31 +318,10 @@ const ContraMontreScreen = () => {
           </Pressable>
         )}
       </View>
-
-    
-      {/* </View> */}
     </SafeAreaView>
   );
 };
 
 export default ContraMontreScreen;
 
-const styles = StyleSheet.create({
-  footer: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: "#712ADE",
-    alignItems: "flex-end",
-    paddingVertical: 10,
-  },
-  line: {
-    height: 2,
-    width: "100%",
-    backgroundColor: "white",
-  },
-  exitButton: {
-    padding: 10,
-  },
-});
+const styles = StyleSheet.create({});

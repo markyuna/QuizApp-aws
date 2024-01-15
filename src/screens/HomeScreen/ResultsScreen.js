@@ -10,9 +10,10 @@ import React from "react";
 import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import styles from './styles';
-
+import {useNavigation} from '@react-navigation/native';
 
 const ResultsScreen = () => {
+  const navigation = useNavigation();
   const route = useRoute();
   // console.log(route.params);
 
@@ -106,7 +107,6 @@ const ResultsScreen = () => {
                 justifyContent: "center",
                 margin: 10,
                 flexDirection: "row",
-                alignItems: "center",
                 marginLeft:"auto",
                 marginRight:"auto"
               }}
@@ -121,7 +121,18 @@ const ResultsScreen = () => {
           )}
         />
 
-        <Pressable style={{backgroundColor:"green",padding:8,marginLeft:"auto",marginRight:"auto",marginBottom:20,borderRadius:5}}>
+        <Pressable 
+          style={{
+            backgroundColor:"green",
+            width:100,
+            padding:8,
+            marginLeft:"auto",
+            marginRight:"auto",
+            marginBottom:20,
+            borderRadius:5
+          }}
+          onPress={() => navigation.navigate('Home')}
+        >
           <Text style={{color:"white",textAlign:"center"}}>Continue</Text>
         </Pressable>
       </Pressable>

@@ -13,7 +13,7 @@ import NewPasswordScreen from '../screens/NewPasswordScreen';
 import {Auth, Hub} from 'aws-amplify';
 
 import BottomTabNavigator from './BottomTabNavigator';
-import ContraMontreScreen from '../screens/HomeScreen/ContraMontre/QuizScreen';
+import ContraMontreScreen from '../screens/HomeScreen/ContraMontre';
 import ResultsScreen from '../screens/HomeScreen/ResultsScreen';
 import ClassiqueScreen from '../screens/HomeScreen/Classique';
 import CategoriesScreen from '../screens/HomeScreen/Categories';

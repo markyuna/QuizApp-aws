@@ -54,6 +54,7 @@ export const generalKnowledgeQuestions = [
     }
 ]
 
+
 export const categories = [
     {
         category: "Classique",
