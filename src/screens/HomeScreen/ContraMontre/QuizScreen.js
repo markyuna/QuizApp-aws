@@ -7,6 +7,7 @@ const ContraMontreScreen = () => {
   const navigation = useNavigation();
   const data = questions;
   const totalQuestions = data.length;
+  console.log(questions);
   // points
   const [points, setPoints] = useState(0);
 

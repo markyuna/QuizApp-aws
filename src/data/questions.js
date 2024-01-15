@@ -1,7 +1,7 @@
 // // src/data/questions.js
 
 
-const generalKnowledgeQuestions = [
+export const generalKnowledgeQuestions = [
     {
         question: "What is the capital city of France?",
         options: [

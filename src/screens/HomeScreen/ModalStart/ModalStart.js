@@ -34,7 +34,7 @@ const ModalStart = ({ modalVisible, setModalVisible }) => {
   };
 
   const generalKnowledgeQuestions = async () => {
-    const quizQuestions = navigation.navigate("Classique")
+    const quizQuestions = navigation.navigate("ClassiqueScreen")
     setModalVisible(false);
 
     console.log(quizQuestions);

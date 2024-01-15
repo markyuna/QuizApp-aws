@@ -42,10 +42,13 @@ const Navigation = () => {
         checkUser();
       }
     };
-
-    Hub.listen('auth', listener);
-    return () => Hub.listen('auth', listener);
+  
+    const hubListener = Hub.listen('auth', listener);
+    
+    // Llama a remove en la variable
+    return () => hubListener();
   }, []);
+  
 
   if (user === undefined) {
     return (
@@ -62,6 +65,7 @@ const Navigation = () => {
           <>
           {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
           <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+          <Stack.Screen name="ClassiqueScreen" component={ClassiqueScreen} />
           <Stack.Screen 
             name="ContraMontre" 
             component={ContraMontreScreen} 
@@ -70,7 +74,6 @@ const Navigation = () => {
             }}
           />
           <Stack.Screen name="Results" component={ResultsScreen} options={{headerShown:false}}/>
-          <Stack.Screen name="Classique" component={ClassiqueScreen} />
           <Stack.Screen 
             name="Categories" 
             component={CategoriesScreen}  
